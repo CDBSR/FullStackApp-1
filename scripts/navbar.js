@@ -6,7 +6,7 @@
         <a href="index.html">Home</a>
         <a href="signup.html">Sign Up</a>
         <a href="login.html">Log In</a>
-        <a href="todo.html">Todos</a>
+        <a href="todos.html">Todos</a>
       </div>`;
 
       document.getElementById('nav').innerHTML = navbar;
