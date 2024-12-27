@@ -4,7 +4,7 @@
  function renderNavbar() {
     const navbar =`<div>
         <a href="index.html">Home</a>
-        <a href="signup.html">Sign Up</a>
+        <a href="signUp.html">Sign Up</a>
         <a href="login.html">Log In</a>
         <a href="todos.html">Todos</a>
       </div>`;
