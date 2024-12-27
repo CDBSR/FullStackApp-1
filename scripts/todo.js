@@ -1,14 +1,18 @@
 
-const baseurl = "http://localhost:3000";
+import { baseurl } from "./baseUrl.js";
 
 let addTodoDiv = document.getElementById('add-todo');
+let form = document.getElementById('form');
+let addtodoButton = document.getElementById('add_update_todo');
 
 document.getElementById('close_modal').addEventListener('click', function(){
     addTodoDiv.style.display = 'none';
+    resetForm();
 });
 
 document.getElementById('add_todo_btn').addEventListener('click', function(){
     addTodoDiv.style.display = 'flex';
+    openAddTodoModal();
 })
 
 document.getElementById('logout').addEventListener('click', function(){
@@ -24,8 +28,6 @@ if(logindata == null){
 }
 
 document.getElementById("user-name").textContent = `Welcome, ${logindata.username}`;
-
-let form = document.getElementById('form');
 
 if(document.getElementById('form')){
     form.addEventListener('submit', async function(){
@@ -54,13 +56,13 @@ if(document.getElementById('form')){
                 body: JSON.stringify(todoObj),
             });
             alert(message);
-            loadData();
+            await loadData();
             addTodoDiv.style.display = "none";
         } catch(err){
             alert('something went wrong !!');
             console.log("Error in adding Todo: ", err);
         } finally {
-            form.reset();
+            resetForm();
         }
     });
 }
@@ -110,13 +112,13 @@ function displayTodos(arr){
         updateStatusButton.setAttribute('class', "todobtns");
         updateStatusButton.textContent = `Toggle Status`;
         updateStatusButton.addEventListener('click', async function (){
-            updateStatusfn(el, i);
+           await updateStatusfn(el, i);
         });
 
         let editTodoButton = document.createElement('button');
         editTodoButton.setAttribute('class', 'todobtns');
         editTodoButton.textContent = `Edit Todo`;
-        editTodoButton.addEventListener('click', async function() {
+        editTodoButton.addEventListener('click', function() {
             editTodofn(el);
         });
 
@@ -124,7 +126,7 @@ function displayTodos(arr){
         deletTodoButton.setAttribute('class', 'todobtns');
         deletTodoButton.textContent = `Delete Todo`;
         deletTodoButton.addEventListener('click', async function(){
-            deleteTodofn(el, i);
+            await deleteTodofn(el, i);
         });
 
         card.append(
@@ -141,10 +143,22 @@ function displayTodos(arr){
     });
 }
 
+function resetForm() {
+    form.reset();
+    form.todoId.value = "";
+  }
+
 window.onload = async () => {
     let arr = await getTodos();
     displayTodos(arr);
   };
+
+function openAddTodoModal(){
+    addTodoDiv.style.display = "flex";
+    addtodoButton.textContent = "Add Todo";
+    form.submit.value = "Add Todo";
+    resetForm();
+}
 
 async function updateStatusfn(el, i) {
     let updatedTodo = {...el, status: !el.status };
@@ -168,7 +182,7 @@ async function updateStatusfn(el, i) {
 
 }
 
-async function editTodofn(todo) {
+function editTodofn(todo) {
     document.getElementById('add_update_todo').textContent = "Edit Todo";
     addTodoDiv.style.display = "flex";
     form.todoId.value = todo.id;
@@ -231,6 +245,7 @@ if(document.getElementById('get_stats')){
 
         addTodoDiv.style.display = "flex";
         document.getElementById('modal_content').innerHTML = card;
+        resetForm();
     });
 }
 
