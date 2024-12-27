@@ -9,27 +9,29 @@
 <body>
     <div id="nav"></div>
 
-    <div id="user-data">
-        <h3 id="user-name"></h3>
-        <button id="logout">Logout</button>
-    </div>
-
-    <div id="add-todo">
-        <h2>Add Todo</h2>
-        <form action="" id="todoform">
-            <label for="title">Enter the Task</label>
-            <input id="title" type="text" placeholder="Enter Task">
-            <label for="deadline">Select Deadline</label>
-            <input type="date">
-            <label for="priority">Select Priority</label>
-            <select id="priority">
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
-            </select>
-            <input type="submit" id="submit" value="Add Todo">
-        </form>
-    </div>
+    <main>
+        <div id="user-data">
+            <h3 id="user-name"></h3>
+            <button id="logout">Logout</button>
+        </div>
+    
+        <div id="add-todo">
+            <h2>Add Todo</h2>
+            <form action="" id="todoform">
+                <label for="title">Enter the Task</label>
+                <input id="title" type="text" placeholder="Enter Task">
+                <label for="deadline">Select Deadline</label>
+                <input type="date" id="deadline">
+                <label for="priority">Select Priority</label>
+                <select id="priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <input type="submit" id="submit" value="Add Todo">
+            </form>
+        </div>
+    </main>
     
     <div id="footer"></div>
 </body>

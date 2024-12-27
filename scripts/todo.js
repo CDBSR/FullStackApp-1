@@ -13,7 +13,7 @@ if(logindata == null){
     window.location.href = 'login.html';
 }
 
-document.getElementById("user-name").textContent = `Welcome, ${logindata.name}`;
+document.getElementById("user-name").textContent = `Welcome, ${logindata.username}`;
 
 let form = document.getElementById('todoform');
 form.addEventListener('submit', async function(){
@@ -35,4 +35,4 @@ form.addEventListener('submit', async function(){
     } catch(err){
         console.log("Error in adding Todo: ", err);
     }
-})
+});
