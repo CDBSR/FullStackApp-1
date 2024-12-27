@@ -1,0 +1,115 @@
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Navbar Styles */
+  #nav {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  #nav a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  #nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer Styles */
+  #footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Main Section Styles */
+  main {
+    margin: 80px;
+  }
+  #signUpForm {
+    padding: 80px 20px 60px; /* Account for navbar and footer */
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  #signUpForm input {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #signupBtn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #signupBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Todo List Styles */
+  #todoList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #todoList li {
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #todoList li button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #todoList li button:hover {
+    background-color: #c82333;
+  }
+
+  #user-data {
+    margin: 50px;
+  }
+  
